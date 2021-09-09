@@ -24,78 +24,119 @@
 
     <link rel="stylesheet" href="css/style.css" />
 
-	<link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css" />
 
+    <link rel="stylesheet" href="css/nav.css" />
   </head>
 
   <body>
-    <div class="container">
-      <div class="row mt-5 pt-3">
-        <div class="col-lg-6 col-md-7 mx-auto">
-          <div class="card">
-			  <div class="card-body">
-				<form class="form-signin">
-					<div class="text-center mb-4">
-					  <img
-						class="mb-4"
-						src="./img/logo.png"
-						alt=""
-						width="72"
-						height="72"
-					  />
-					  <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-					  <h6 class="text-warning"> Connect with PSBC</h6>
-		
-					</div>
-					<div class="form-label-group">
-					  <input
-						type="emai"
-						id="inputEmail4"
-						class="form-control"
-						placeholder="Email"
-						required=""
-						autofocus=""
-					  />
-					  <label for="inputEmail4">Email Address</label>
-					</div>
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" width="50" height="50" alt="psbc-logo" />
+          <h4 class="d-inline align-middle">PSBC</h4>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-					<div class="form-label-group">
-					  <input
-						type="passwod"
-						id="inputPassword4"
-						class="form-control"
-						placeholder="Password"
-						required=""
-					  />
-					  <label for="inputPassword4">Password</label>
-					  <small class="m-0 p-0">
-						  <a href="#">Forgot password?</a>
-					  </small>
-					</div>
-					
-
-					<div class="checkbox mb-3">
-					  <label>
-						<input type="checkbox" value="remember-me" /> Remember me
-					  </label>
-					</div>
-					<button class="btn btn-lg btn-primary btn-block" type="submit">
-					  Sign in
-					</button>
-
-					<p class="text-muted">Don't have an account? 
-						<a href="#">Sign Up</a>
-					</p>
-
-
-				  </form>
-			  </div>
-		  </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item d-lg-none d-block">
+              <a class="nav-link" href="#">LMS</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-	
-	<!-- <footer class="mt-5 p-3">
+    </nav>
+    <!-- END OF NAVBAR -->
+
+    <section id="register" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h1>Sign In</h1>
+            <p class="lead">
+              <i class="fas fa-user"></i>
+              Connect with PSBC
+            </p>
+
+            <div class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">
+                &times;
+              </button>
+              Invaid credentials, Please check your email or password
+            </div>
+
+            <form action="index.html">
+              <div class="form-group mb-3">
+                <div class="form-label-group">
+                  <input
+                    type="emai"
+                    id="inputEmail4"
+                    class="form-control is-invalid"
+                    placeholder="Email"
+                    autofocus=""
+                  />
+                  <label for="inputEmail4">Email Address</label>
+				  <div class="invalid-feedback">Please input a valid email</div>
+                </div>
+
+                <div class="form-label-group">
+					<input
+					  type="passwod"
+					  id="inputPassword4"
+					  class="form-control"
+					  placeholder="Password"
+					/>
+					<label for="inputPassword4">Password</label>
+					<small class="m-0 p-0">
+						<a href="#">Forgot password?</a>
+					</small>
+				  </div>
+              </div>
+
+              <div class="form-group mb-2">
+                <button class="btn sign-in px-3">
+                  <i class="fas fa-sign-in-alt"></i>
+                  Login
+                </button>
+              </div>
+            </forma>
+
+            <p>
+              Don't have an account?
+              <span class="text-info">
+                <a class="text-decoration-none" href="register.html">Sign Up</a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <footer class="mt-5 p-3">
 		<div class="container">
 		  <div class="d-flex justify-content-center">
 			<div>

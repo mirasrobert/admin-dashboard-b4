@@ -33,14 +33,14 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
+.dashboard-nav {
   min-width: calc(100% - var(--sidebar-width));
   width: calc(100% - var(--sidebar-width)) !important;
   margin-left: var(--sidebar-width) !important;
   z-index: 9999;
 }
 
-.navbar ul li {
+.dashboard-nav ul li {
   padding-right: 0.4rem;
 }
 
