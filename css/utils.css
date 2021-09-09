@@ -12,6 +12,11 @@
 .text-primary {
   color: #7579e7 !important;
 }
+
+.font-sm {
+  font-size: 0.875rem; 
+}
+
 .font-1 {
   font-size: 1rem;
 }
