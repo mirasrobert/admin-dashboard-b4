@@ -44,7 +44,7 @@ body {
   padding-right: 0.4rem;
 }
 
-footer {
+.footer-dashboard {
   min-width: calc(100% - var(--sidebar-width));
   width: calc(100% - var(--sidebar-width)) !important;
   margin-left: var(--sidebar-width) !important;
