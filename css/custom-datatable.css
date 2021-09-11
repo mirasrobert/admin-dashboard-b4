@@ -209,6 +209,11 @@
 .dropdown-menu i {
   margin-right: 8px;
 }
+
+.disabled:hover {
+  cursor:not-allowed !important
+}
+
 .main-datatable .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: #999999 !important;
   background-color: #f6f6f6 !important;
