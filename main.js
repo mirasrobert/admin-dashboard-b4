@@ -55,4 +55,24 @@ $(function () {
 
   var myChart = new Chart(document.getElementById('pie'), config);
   var myChart = new Chart(document.getElementById('line'), lineConfig);
+
+
+
+  // Datatable
+
+  var dataTable = $('#filtertable').DataTable({
+    dom: '<"top">ct<"top"p><"clear">',
+	pageLength: 5
+  });
+
+  $('#filterbox').keyup(function () {
+    dataTable.search(this.value).draw();
+  });
+
+  $('#pageFilter').change(function () {
+    let tablePageLength = parseInt(this.value);
+
+    dataTable.page.len(tablePageLength).draw();
+  });
+
 });

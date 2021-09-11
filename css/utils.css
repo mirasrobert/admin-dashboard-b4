@@ -1,3 +1,17 @@
+/*
+ * @desc Utility Classes 
+ * @author Robert Miras
+ */
+
+:root {
+  --orange: rgb(255, 127, 1);
+  --orange-hover: rgba(255, 127, 1, 0.8);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
 .text-uppercase {
   letter-spacing: 0.1em;
 }
@@ -9,12 +23,21 @@
   background: #ececf6;
 }
 
+.bg-orange {
+  background: var(--orange);
+}
+
+.bg-orange:hover {
+  background: var(--orange-hover);
+  color: #fff;
+}
+
 .text-primary {
   color: #7579e7 !important;
 }
 
 .font-sm {
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
 }
 
 .font-1 {
@@ -46,4 +69,16 @@
 }
 .border-radius-5 {
   border-radius: 30px;
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+.border-radius-75 {
+  border-radius: 75%;
+}
+
+.border-radius-100 {
+  border-radius: 100%;
 }

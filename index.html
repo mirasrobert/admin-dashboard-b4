@@ -9,6 +9,12 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.10.14/css/jquery.dataTables.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -20,7 +26,10 @@
     <!-- CUSTOM STYLING -->
     <link rel="stylesheet" href="css/utils.css" />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <link rel="stylesheet" href="css/custom-datatable.css">
+
   </head>
   <body>
     <!-- TOP NAV -->
@@ -95,15 +104,13 @@
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false"
-            > 
-              <img
+              aria-expanded="false"> 
+            <img
               width="35"
               height="35"
               class="avatar"
               src="https://randomuser.me/api/portraits/men/97.jpg"
-              alt=""
-            />
+              alt=""/>
             </a>
             <div
               class="dropdown-menu dropdown-menu-right"
@@ -171,32 +178,32 @@
       </ul>
 
       <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">
-        Charts
+        Example Title
       </p>
 
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-sm">
             <i class="fa fa-th-large mr-3 text-gray fa-fw"></i>
-            area charts
+            Link One
           </a>
         </li> 
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-sm">
             <i class="fa fa-th-large mr-3 text-gray fa-fw"></i>
-            bar charts
+            Link Two
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-sm">
             <i class="fa fa-th-large mr-3 text-gray fa-fw"></i>
-            pie charts
+            Link Three
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-sm">
             <i class="fa fa-th-large mr-3 text-gray fa-fw"></i>
-            line charts
+            Link Four
           </a>
         </li>
       </ul>
@@ -206,7 +213,7 @@
     <!-- Page content holder -->
     <div class="page-content p-5" id="content">
       <!-- Demo content -->
-      <h2 class="font-weight-bold">Summary</h2>
+      <h2 class="font-weight-bold">Cards</h2>
       <small class="text-muted mb-0">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
         repudiandae.
@@ -267,94 +274,426 @@
       <!-- TABLE -->
       <div class="row py-5">
         <div class="col-lg-12">
-          <h2 class="font-weight-bold">History</h2>
+          <h2 class="font-weight-bold">Tables</h2>
           <small class="text-muted">Users of last 6 months</small>
 
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  <img
-                    width="35"
-                    height="35"
-                    class="avatar"
-                    src="https://randomuser.me/api/portraits/men/97.jpg"
-                    alt=""
-                  />
-                </th>
-                <td class="text-muted">John</td>
-                <td class="text-muted">Doe</td>
-                <td>
-                  <span class="badge badge-info">Enrolled</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <img
-                    width="35"
-                    height="35"
-                    class="avatar"
-                    src="https://randomuser.me/api/portraits/men/79.jpg"
-                    alt=""
-                  />
-                </th>
-                <td class="text-muted">Jacob</td>
-                <td class="text-muted">Thornton</td>
-                <td>
-                  <span class="badge badge-warning text-white"
-                    >Not verified</span
+          <div class="row">
+            <div class="col-md-12 main-datatable">
+              <div class="card_body">
+                <div class="row d-flex">
+                  <div class="col-sm-4 createSegment">
+                    <span>Show</span>
+                    <select
+                      name="filtertable_length"
+                      aria-controls="filtertable"
+                      id="pageFilter"
+                      class="d-inline-block"
+                    >
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-8 add_flex">
+                    <div class="form-group searchInput">
+                      <label for="email">Search:</label>
+                      <input
+                        type="search"
+                        class="form-control"
+                        id="filterbox"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="overflow-x">
+                  <table
+                    style="width: 100%"
+                    id="filtertable"
+                    class="table cust-datatable dataTable no-footer"
                   >
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <img
-                    width="35"
-                    height="35"
-                    class="avatar"
-                    src="https://randomuser.me/api/portraits/women/29.jpg"
-                    alt=""
-                  />
-                </th>
-                <td class="text-muted">Jane</td>
-                <td class="text-muted">Gordon</td>
-                <td>
-                  <span class="badge badge-success">Completed</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <img
-                    width="35"
-                    height="35"
-                    class="avatar"
-                    src="https://randomuser.me/api/portraits/women/30.jpg"
-                    alt=""
-                  />
-                </th>
-                <td class="text-muted">Charlotte</td>
-                <td class="text-muted">Otto</td>
-                <td>
-                  <span class="badge badge-success">Completed</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <thead>
+                      <tr>
+                        <th style="min-width: 25px">ID</th>
+                        <th style="min-width: 95px"></th>
+                        <th style="min-width: 100px">Name</th>
+                        <th style="min-width: 100px">Description</th>
+                        <th style="min-width: 100px">Date</th>
+                        <th style="min-width: 100px">Status</th>
+                        <th style="min-width: 150px">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/men/97.jpg"
+                          alt=""/>
+                        </td>
+                        <td>John Doe</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>30-Jan-2020</td>
+                        <td><span class="mode mode_on">Active</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/women/97.jpg"
+                          alt=""/>
+                        </td>
+                        <td>Elicia Byers</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>17-Apr-2020</td>
+                        <td><span class="mode mode_done">Completed</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/women/98.jpg"
+                          alt=""/>
+                        </td>
+                        <td>Jean Odom</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>17-Mar-2019</td>
+                        <td><span class="mode mode_on">Active</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/men/98.jpg"
+                          alt=""/>
+                        </td>
+                        <td>Atlas Maynard</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>25-Sept-2018</td>
+                        <td><span class="mode mode_off">Inactive</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/men/40.jpg"
+                          alt=""/>
+                        </td>
+                        <td>Yuvaan Simon</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>19-Aug-2017</td>
+                        <td><span class="mode mode_off">Inactive</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>
+                          <img
+                          width="35"
+                          height="35"
+                          class="avatar"
+                          src="https://randomuser.me/api/portraits/men/41.jpg"
+                          alt=""/>
+                        </td>
+                        <td>Kie Price</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, laborum?</td>
+                        <td>19-Aug-2017</td>
+                        <td><span class="mode mode_on">Active</span></td>
+                        <td>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank"> Dummy Details </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <span class="actionCust">
+                            <a href="#"><i class="fas fa-chart-line"></i></a>
+                          </span>
+                          <div class="btn-group">
+                            <a
+                              class="dropdown_icon"
+                              data-toggle="dropdown"
+                            >
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown_more">
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" target="_black">
+                                  <i class="fa fa-trash"></i> Delete
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END TABLE -->
 
+      <!-- Graphs -->
       <div class="row">
         <div class="col-lg-12">
-          <h2 class="font-weight-bold">Analytics</h2>
+          <h2 class="font-weight-bold">Graphs & Analytics</h2>
           <small class="text-muted"
             >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Doloremque, fugiat!</small
@@ -378,8 +717,86 @@
           </div>
         </div>
       </div>
-    </div>
 
+      <!-- Forms -->
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <h2 class="font-weight-bold">Forms</h2>
+          <small class="text-muted"
+            >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Doloremque, fugiat!</small
+          >
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-lg-8 col-sm-12">
+          <form>
+            <div class="form-group">
+              <label >Email address</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control is-invalid">
+              <div class="invalid-feedback">Password is required</div>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary bg-orange border-0">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <h2 class="font-weight-bold">Alerts</h2>
+          <small class="text-muted"
+            >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Doloremque, fugiat!</small
+          >
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-lg-8 col-sm-12">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+          <div class="alert alert-success" role="alert">
+            A simple success alert—check it out!
+          </div>
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          <div class="alert alert-warning" role="alert">
+            A simple warning alert—check it out!
+          </div>
+          <div class="alert alert-info" role="alert">
+            A simple info alert—check it out!
+          </div>
+          <div class="alert alert-light" role="alert">
+            A simple light alert—check it out!
+          </div>
+          <div class="alert alert-dark" role="alert">
+            A simple dark alert—check it out!
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <!-- End Page Content Holder -->
+
+    <!-- Start Footer -->
     <footer class="mt-5 p-3 footer-dashboard">
       <div class="container">
         <div class="d-flex justify-content-between">
@@ -393,8 +810,8 @@
         </div>
       </div>
     </footer>
+    <!-- End Footer -->
 
-    <!-- End demo content -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -411,6 +828,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.datatables.net/1.10.14/js/jquery.dataTables.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
